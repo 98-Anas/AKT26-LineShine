@@ -4,3 +4,4 @@ data/*.csv.gz
 .ipynb_checkpoints/
 __pycache__/
 .venv/
+notebooks/partA.py
