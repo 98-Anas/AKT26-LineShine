@@ -465,7 +465,7 @@ checks = {
     "impact study computed": "impact" in globals() and len(impact) >= 2,
 }
 for k, v in checks.items(): print(("OK   " if v else "FAIL ") + k)
-print("\nready to submit" if all(checks.values()) else "\nNOT ready: fix the FAIL lines")
+print("\n✓ ready to submit" if all(checks.values()) else "\nNOT ready: fix the FAIL lines")
 '''), keep_md["foot"]]
 
 nb["cells"] = head + B

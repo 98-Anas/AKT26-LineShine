@@ -1,6 +1,6 @@
 """Markdown answer cells (numbers taken from the executed notebook, SEED = 2065)."""
 T1 = r"""
-**Answer & conclusion (Task 1)**
+**✍ Answer & conclusion (Task 1)**
 
 The merged export has **317,970 rows**, where 12 stations × 26,304 h = 315,648 are expected. The audit found 11 issues across all six dimensions (issue log above):
 
@@ -13,7 +13,7 @@ The merged export has **317,970 rows**, where 12 stations × 26,304 h = 315,648 
 * **Stuck sensor:** the Changping PM2.5 sensor has flat runs of 24–72 h.
 """
 T2 = r"""
-**Answer & conclusion (Task 2)**
+**✍ Answer & conclusion (Task 2)**
 
 `clean_basic` detects every problem **from the data** (`detect_issues`) instead of hard-coding stations, so it works on next month's export or on any team seed. On our file it found `unit_CO = [(Nongzhanguan, 2014)]` and `tz_shift = [(Shunyi, 2015)]`. Verification:
 
@@ -24,7 +24,7 @@ T2 = r"""
 * Decisions: sentinels and impossible values → NaN. Swaps are repaired only when the swapped value fits the neighbouring hours. Each whole stuck run becomes NaN, not just its tail. For the re-uploaded month we keep the first copy, since the O3 difference is 1 µg/m³.
 """
 T3 = r"""
-**Answer & conclusion (Task 3)**
+**✍ Answer & conclusion (Task 3)**
 
 We hid known values for **NO2 and CO** at an urban station (Dongsi) and a suburban one (Huairou), using single-hour and 24-h masks. RMSE in µg/m³:
 
@@ -40,7 +40,7 @@ Time interpolation is unbeatable for short gaps (**7.7 vs 33.4**) but degrades o
 The **target PM2.5 is never imputed**, because we don't train on invented labels: 2.2 % of rows are dropped as a result. That may bias towards non-smog hours if sensors fail more often during heavy pollution (possible MNAR). Imputation is worth **1.56 µg/m³ of CV RMSE** (variant A 41.73 vs B 43.29).
 """
 T4 = r"""
-**Answer & conclusion (Task 4)**
+**✍ Answer & conclusion (Task 4)**
 
 A Hampel filter (25 h window, k = 3) flags **14,730** PM2.5 hours. We classify a flagged hour as a **real episode** when the same hour is within 3× of the 12-station median, i.e. the whole city is high. That covers **14,082** hours: winter smog, and Spring Festival fireworks on 18–19 Feb 2015 (left plot). Real episodes are **kept**, because they are exactly what a virtual sensor must reproduce.
 
@@ -49,7 +49,7 @@ Only **648** isolated single-station spikes are suspicious, so we report them bu
 **Transforms:** PM2.5 skewness drops from **1.96 to −0.34** with log1p (−0.04 Yeo-Johnson); SO2 from 2.71 to 0.40 and CO from 2.46 to −0.03. Tree models don't need transformed features. A **log target** (variant C) actually hurt CV RMSE (45.36 vs 41.73), because it under-predicts the high peaks that dominate RMSE, so we do not use it.
 """
 T5 = r"""
-**Answer & conclusion (Task 5)**
+**✍ Answer & conclusion (Task 5)**
 
 Everything that learns (median imputer, missing indicators, scaler, one-hot encoder) lives inside the `Pipeline`, so it is re-fitted in each of the 5 `TimeSeriesSplit` folds on data sorted by time. PM10 is never a feature. The test year is not touched here.
 
@@ -65,7 +65,7 @@ Everything that learns (median imputer, missing indicators, scaler, one-hot enco
 The Part-A demo shows why the split matters: a random KFold reports **29.71**, against **42.32** for a time split on the same model. Random splits leak neighbouring hours.
 """
 T6 = r"""
-**Answer & conclusion (Task 6)**
+**✍ Answer & conclusion (Task 6)**
 
 Both models are scored on the **same 97,979 complete-case rows** of the untouched test year (Mar 2016 – Feb 2017):
 
@@ -80,7 +80,7 @@ Both models are scored on the **same 97,979 complete-case rows** of the untouche
 * The bigger win comes from what clean data **enables**: a correct, continuous hourly series per station makes the rolling-history features valid.
 """
 HPC = r"""
-**Answer & conclusion (bonus)**
+**✍ Answer & conclusion (bonus)**
 
 The 12 stations are independent tasks for `joblib` (loky backend). We take the best of 3 runs of `clean_basic` + per-station imputation:
 
