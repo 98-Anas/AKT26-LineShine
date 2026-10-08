@@ -3,22 +3,22 @@
 The hackathon runs in weekly assignments, so **1 sprint = 1 assignment (about 1 week)**.
 
 ## Roles
-- **Product Owner:** Abdallah Ismail (team leader). Sets priorities and does the final submission.
-- **Scrum Master:** Anas Elgalad. Runs stand-ups, keeps the board and [TEAM-PROGRESS](TEAM-PROGRESS.md) current, and removes blockers.
+- **Product Owner:** Abdallah Ismail (team leader). Sets priorities, **manages the Notion task tracker and team progress** ([dashboard](https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5)), and does the final submission.
+- **Scrum Master:** Anas Elgalad. Runs stand-ups, removes blockers, and keeps the repo and GitHub issues in shape.
 - **Developers:** everyone, each owning at least one task per sprint.
 
 ## Ceremonies (online, short)
 | Ceremony | When | Length | Output |
 |---|---|---|---|
 | Sprint planning | Day after the lecture | 30 min | Tasks with owners on the board |
-| Daily stand-up | Daily, async in chat or a 10-min call | 10 min | One row per person in TEAM-PROGRESS |
+| Daily stand-up | Daily, async in chat or a 10-min call | 10 min | One row per person on the Notion dashboard |
 | Integration | 2 days before the deadline | 1–2 h | All tasks merged into one notebook, then Restart & Run All |
 | Review | Deadline − 1 day | 30 min | Check outputs and every "Answer & conclusion" cell |
 | Retrospective | After submission | 20 min | Keep / Change / Actions |
 
 **Stand-up format:** Yesterday · Today · Blocked by
 
-## Board columns (GitHub Project)
+## Board columns (Notion is the official board; the GitHub Project mirrors code work)
 `Backlog → To Do → In Progress → Review → Done`
 
 ## Definition of Done (per task)
