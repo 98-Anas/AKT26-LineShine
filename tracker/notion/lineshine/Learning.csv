@@ -1,0 +1,27 @@
+﻿Topic,Area,Resource,Link,Est. hours,Member,Status
+pandas basics,Python data wrangling,Kaggle Learn: Pandas,https://www.kaggle.com/learn/pandas,4.0,,Not started
+"groupby, pivot, time series",Python data wrangling,pandas User Guide,https://pandas.pydata.org/docs/user_guide/index.html,,,Not started
+"NumPy, pandas, matplotlib",Python data wrangling,Python Data Science Handbook,https://jakevdp.github.io/PythonDataScienceHandbook/,,,Not started
+"Missing values, scaling, dates, encodings",Data quality and cleaning (Tasks 1–2),Kaggle Learn: Data Cleaning,https://www.kaggle.com/learn/data-cleaning,4.0,,Not started
+Missing data in pandas,Data quality and cleaning (Tasks 1–2),pandas: Working with missing data,https://pandas.pydata.org/docs/user_guide/missing_data.html,0.5,,Not started
+The dataset,Data quality and cleaning (Tasks 1–2),UCI 501: Beijing Multi-Site Air Quality,https://archive.ics.uci.edu/dataset/501/beijing+multi+site+air+quality+data,0.25,,Not started
+"Simple/KNN/Iterative imputers, missing indicators",Imputation (Task 3),scikit-learn: Imputation,https://scikit-learn.org/stable/modules/impute.html,0.75,,Not started
+Limited time interpolation,Imputation (Task 3),pandas `Series.interpolate`,https://pandas.pydata.org/docs/reference/api/pandas.Series.interpolate.html,0.25,,Not started
+MCAR / MAR / MNAR,Imputation (Task 3),"Flexible Imputation of Missing Data, ch. 1–2",https://stefvanbuuren.name/fimd/,1.0,,Not started
+"Log, power and quantile transforms",Outliers and transformations (Task 4),scikit-learn: Preprocessing,https://scikit-learn.org/stable/modules/preprocessing.html,0.5,,Not started
+Outlier detection,Outliers and transformations (Task 4),scikit-learn: Novelty and outlier detection,https://scikit-learn.org/stable/modules/outlier_detection.html,0.5,,Not started
+Outlier basics,Outliers and transformations (Task 4),NIST e-Handbook: Detection of outliers,https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm,0.33,,Not started
+"Pipeline, ColumnTransformer, TransformedTargetRegressor",Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Composite estimators,https://scikit-learn.org/stable/modules/compose.html,0.75,,Not started
+**Data leakage**,Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Common pitfalls,https://scikit-learn.org/stable/common_pitfalls.html,0.75,,Not started
+TimeSeriesSplit,Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Time series CV,https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split,0.33,,Not started
+HistGradientBoosting,Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Gradient boosting,https://scikit-learn.org/stable/modules/ensemble.html#histogram-based-gradient-boosting,0.5,,Not started
+"Pipelines, CV, leakage (course)",Leak-free pipelines and time-series CV (Tasks 5–6),Kaggle Learn: Intermediate ML,https://www.kaggle.com/learn/intermediate-machine-learning,4.0,,Not started
+RMSE / MAE / R²,Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Regression metrics,https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics,0.33,,Not started
+Time-series thinking,Leak-free pipelines and time-series CV (Tasks 5–6),Forecasting: Principles and Practice (3rd ed.),https://otexts.com/fpp3/,,,Not started
+joblib Parallel,HPC / parallel computing (bonus),joblib: Embarrassingly parallel for loops,https://joblib.readthedocs.io/en/stable/parallel.html,0.5,,Not started
+Dask,HPC / parallel computing (bonus),Dask Tutorial,https://tutorial.dask.org/,2.0,,Not started
+"Speed-up, efficiency, Amdahl's law",HPC / parallel computing (bonus),Wikipedia: Amdahl's law,https://en.wikipedia.org/wiki/Amdahl%27s_law,0.33,,Not started
+Git,Teamwork tooling,"Pro Git book, ch. 1–3",https://git-scm.com/book/en/v2,2.0,,Not started
+GitHub Projects,Teamwork tooling,GitHub Docs: About Projects,https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects,0.33,,Not started
+Notebook diff and merge,Teamwork tooling,nbdime,https://nbdime.readthedocs.io/,0.25,,Not started
+Scrum,Teamwork tooling,Atlassian: Scrum,https://www.atlassian.com/agile/scrum,0.25,,Not started

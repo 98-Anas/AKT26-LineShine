@@ -1,0 +1,4 @@
+﻿Risk or issue,Type,Likelihood,Impact,Owner,Mitigation,Status
+Deadline confusion: organisers use Anywhere-on-Earth time,Risk,3,5,Abdallah Ismail,"Use Cairo time everywhere: Sat Oct 10, 2:59 PM",Monitoring
+Notebook merge conflicts when several people edit it,Risk,4,3,,"Edit scripts/build_notebook.py, not the notebook; one integrator",Open
+"UCI download fails, so the notebook silently uses synthetic data",Issue,5,5,,Real data committed in data/raw + assert in notebook,Closed

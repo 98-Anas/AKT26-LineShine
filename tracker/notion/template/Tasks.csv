@@ -1,0 +1,4 @@
+﻿Task,Milestone,Owner,Status,Priority,Start,Due,Completed on,Est. hours,Progress,Depends on,Notes
+Example: write the project brief,Planning,Alex (example),Done,High,"October 09, 2026","October 12, 2026 05:00 PM","October 09, 2026",3,1,,Example row: overwrite or delete
+Example: set up the shared workspace,Planning,Sam (example),In progress,Medium,"October 09, 2026","October 15, 2026 12:00 PM",,2,0.5,,Example row
+Example: build the first version,Build,Jordan (example),Not started,Critical,"October 16, 2026","November 08, 2026 05:00 PM",,20,0,T-002,Example row

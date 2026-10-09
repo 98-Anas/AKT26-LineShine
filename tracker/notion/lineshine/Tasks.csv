@@ -1,0 +1,13 @@
+﻿Task,Milestone,Owner,Status,Priority,Start,Due,Completed on,Est. hours,Progress,Depends on,Notes
+"Rename notebook, set TEAM_ID = 1065 and TEAM_NAME",Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,
+Task 1 – Data-quality audit and issue log (15 pts),Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,15 points
+"Task 2 – Consistency, validity and timeliness fixes (15 pts)",Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,15 points
+Task 3 – Imputation study (15 pts),Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,15 points
+Task 4 – Outliers and transformations (10 pts),Week 1 – Air-Quality Data Challenge,,Done,Medium,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,10 points
+Task 5 – Leak-free pipeline + TimeSeriesSplit CV (15 pts),Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,15 points
+Task 6 – Impact study on the test year (20 pts),Week 1 – Air-Quality Data Challenge,,Done,Critical,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,20 points
+Final summary cell (10 pts),Week 1 – Air-Quality Data Challenge,,Done,High,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,10 points
+"Bonus – parallel per-station cleaning, HPC (+10 pts)",Week 1 – Air-Quality Data Challenge,,Done,Medium,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,10 points
+Team review of the notebook + Restart & Run All,Week 1 – Air-Quality Data Challenge,,Not started,Critical,"October 03, 2026","October 10, 2026 02:59 PM",,,0,,
+"Upload notebook via the Google Form (team leader, Team ID 1065)",Week 1 – Air-Quality Data Challenge,,Not started,Critical,"October 03, 2026","October 10, 2026 02:59 PM",,,0,,
+Keep beijing_clean_team1065.csv.gz for Week 2,Week 1 – Air-Quality Data Challenge,,Done,Medium,"October 03, 2026","October 10, 2026 02:59 PM","October 09, 2026",,1,,
