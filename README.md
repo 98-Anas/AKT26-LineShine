@@ -21,8 +21,6 @@
 
 **Team ID 1065** · Abdallah Ismail (team leader) · Omar Seifelnasr · Abdulrahman Omran · Anas Elgalad · Mohamed Abd Elaal · Mohamed Salah
 
-> All times in this repo are **Cairo time, 12-hour AM/PM**.
-
 ## Quick links
 
 | I want to… | Go here |
