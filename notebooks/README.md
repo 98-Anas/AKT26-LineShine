@@ -3,7 +3,7 @@
 | File | What it is |
 |---|---|
 | [L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb](L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb) | **Week 1, our submission.** Fully run, with every answer filled in |
-| [original/](original/) | The untouched notebook the organisers gave us |
+| [original/](original/) | The starting notebook our version was built from. It is a partly filled draft for Team 1 (`TEAM_ID = 1`), not the blank organiser template. Part A comes from it; Part B is rewritten |
 
 Want the story without the code? Read [docs/assignment-1.md](../docs/assignment-1.md).
 
