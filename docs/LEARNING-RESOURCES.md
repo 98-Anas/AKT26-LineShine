@@ -55,13 +55,3 @@ Sections are ordered by priority for Sprint 1. ⏱ = rough time needed.
 | GitHub Projects | [GitHub Docs: About Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) | 20 min |
 | Notebook diff and merge | [nbdime](https://nbdime.readthedocs.io/) | 15 min |
 | Scrum | [Atlassian: Scrum](https://www.atlassian.com/agile/scrum) | 15 min |
-
-## Who reads what before their task
-| Member | Sections |
-|---|---|
-| Omar | §2 |
-| Abdulrahman | §2 + pandas time series |
-| Anas | §3, §6 |
-| Mohamed Abd Elaal | §4 |
-| Mohamed Salah | §5 |
-| Abdallah | §5 (leakage), §7 |

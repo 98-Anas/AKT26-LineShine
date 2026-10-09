@@ -1,6 +1,6 @@
 # Team Progress
 
-> **Team progress, daily stand-ups and the burndown are kept on Notion by the team leader (Abdallah Ismail):**
+> **Team progress, daily stand-ups and the burndown are kept on Notion:**
 > **https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5**
 >
 > Post your stand-up there every day (Yesterday · Today · Blocked by). This file only keeps a short log of technical milestones from the repo.

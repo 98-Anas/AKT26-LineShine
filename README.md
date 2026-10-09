@@ -11,18 +11,18 @@
 | **Sprint 1 deadline** | **Sat, Oct 10 2026, 2:59 PM Cairo time** (= Oct 9, 11:59 PM AoE) |
 | **Timezone** | All times in this repo are Cairo, Egypt (EEST, UTC+3), 12-hour AM/PM |
 | **Submit via** | https://forms.gle/nW2kwDsy62fJ5KHt5 (team leader only, Team ID `1065`) |
-| **Task tracker & team progress** | [Notion dashboard](https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5), managed by the team leader |
+| **Task tracker & team progress** | [Notion dashboard](https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5), the team's official tracker |
 | **Course files** | [Google Drive](https://drive.google.com/drive/folders/1HY9vywZwunEfJGD7Fqc2uyYcJVlhcVpW?usp=sharing) → Session 1 › Assignment1 |
 
 ## Team
-| Member | Role |
+| Member | |
 |---|---|
-| Abdallah Ismail | Team leader · Product Owner · manages Notion tracker · submits |
-| Omar Seifelnasr | Developer |
-| Abdulrahman Omran | Developer |
-| Anas Elgalad | Scrum Master · repo admin |
-| Mohamed Abd Elaal | Developer |
-| Mohamed Salah | Developer |
+| Abdallah Ismail | Team leader |
+| Omar Seifelnasr | Member |
+| Abdulrahman Omran | Member |
+| Anas Elgalad | Member |
+| Mohamed Abd Elaal | Member |
+| Mohamed Salah | Member |
 
 ## Repo map
 | Path | What |

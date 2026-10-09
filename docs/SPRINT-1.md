@@ -5,17 +5,17 @@
 **Sprint goal:** submit one fully executed notebook that passes the Submission check. It must contain a cleaned, leak-free virtual PM2.5 sensor that measurably beats the naive model on the 2016–17 test year. Also export `beijing_clean_team1065.csv.gz` for Week 2.
 
 ## Scope
-| # | Task | Pts | Owner (proposed) |
-|---|---|---|---|
-| 1 | Data-quality audit + issue log | 15 | Omar Seifelnasr |
-| 2 | `clean_basic(df)`: consistency, validity, timeliness | 15 | Abdulrahman Omran |
-| 3 | Imputation study (≥3 imputers, 2 pollutants, 1 h and 24 h masks) | 15 | Anas Elgalad |
-| 4 | Outliers (stuck/spikes vs real episodes) + transforms | 10 | Mohamed Abd Elaal |
-| 5 | Leak-free pipeline + 5-fold `TimeSeriesSplit` | 15 | Mohamed Salah |
-| 6 | Impact study: naive vs cleaned on the test year | 20 | Mohamed Salah + Abdallah Ismail |
-| — | Final summary cell | 10 | Abdallah Ismail |
-| ★ | HPC bonus: joblib per-station speed-up | +10 | Anas Elgalad |
-| — | Integration, Restart & Run All, Submission check, upload | — | Abdallah Ismail |
+| # | Task | Pts |
+|---|---|---|
+| 1 | Data-quality audit + issue log | 15 |
+| 2 | `clean_basic(df)`: consistency, validity, timeliness | 15 |
+| 3 | Imputation study (≥3 imputers, 2 pollutants, 1 h and 24 h masks) | 15 |
+| 4 | Outliers (stuck/spikes vs real episodes) + transforms | 10 |
+| 5 | Leak-free pipeline + 5-fold `TimeSeriesSplit` | 15 |
+| 6 | Impact study: naive vs cleaned on the test year | 20 |
+| — | Final summary cell | 10 |
+| ★ | HPC bonus: joblib per-station speed-up | +10 |
+| — | Integration, Restart & Run All, Submission check, upload | — |
 
 **Dependencies:** T1 → T2 → (T3, T4) → T5 → T6 → Summary. `clean_basic` blocks everyone, so it comes first.
 
