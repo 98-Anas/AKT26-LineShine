@@ -44,7 +44,7 @@ Sections are ordered by what you need first for the Week-1 assignment. ⏱ = rou
 ## 6. HPC / parallel computing (bonus)
 | Topic | Resource | ⏱ |
 |---|---|---|
-| joblib Parallel | [joblib: Embarrassingly parallel for loops](https://joblib.readthedocs.io/en/stable/parallel.html) | 30 min |
+| joblib Parallel | [joblib: Parallel (docs and examples)](https://joblib.readthedocs.io/en/stable/generated/joblib.Parallel.html) | 30 min |
 | Dask | [Dask Tutorial](https://tutorial.dask.org/) | 2 h |
 | Speed-up, efficiency, Amdahl's law | [Wikipedia: Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law) | 20 min |
 

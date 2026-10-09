@@ -18,7 +18,7 @@ HistGradientBoosting,Leak-free pipelines and time-series CV (Tasks 5–6),scikit
 "Pipelines, CV, leakage (course)",Leak-free pipelines and time-series CV (Tasks 5–6),Kaggle Learn: Intermediate ML,https://www.kaggle.com/learn/intermediate-machine-learning,4.0,,Not started
 RMSE / MAE / R²,Leak-free pipelines and time-series CV (Tasks 5–6),scikit-learn: Regression metrics,https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics,0.33,,Not started
 Time-series thinking,Leak-free pipelines and time-series CV (Tasks 5–6),Forecasting: Principles and Practice (3rd ed.),https://otexts.com/fpp3/,,,Not started
-joblib Parallel,HPC / parallel computing (bonus),joblib: Embarrassingly parallel for loops,https://joblib.readthedocs.io/en/stable/parallel.html,0.5,,Not started
+joblib Parallel,HPC / parallel computing (bonus),joblib: Parallel (docs and examples),https://joblib.readthedocs.io/en/stable/generated/joblib.Parallel.html,0.5,,Not started
 Dask,HPC / parallel computing (bonus),Dask Tutorial,https://tutorial.dask.org/,2.0,,Not started
 "Speed-up, efficiency, Amdahl's law",HPC / parallel computing (bonus),Wikipedia: Amdahl's law,https://en.wikipedia.org/wiki/Amdahl%27s_law,0.33,,Not started
 Git,Teamwork tooling,"Pro Git book, ch. 1–3",https://git-scm.com/book/en/v2,2.0,,Not started
