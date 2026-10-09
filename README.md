@@ -20,6 +20,7 @@ AKT26-LineShine/
 ├── data/raw/         ← the real Beijing air-quality data (12 station files)
 ├── sessions/         ← course material from the organisers (slides, notes, briefs)
 ├── docs/             ← explanations: how we solved each assignment + what to learn
+├── tracker/          ← Excel project tracker (tasks, daily check-ins, learning)
 ├── notion/           ← templates to import into our Notion page
 ├── scripts/          ← helper scripts that rebuild the notebook
 ├── pyproject.toml    ← list of Python packages (managed by uv)
@@ -31,6 +32,7 @@ AKT26-LineShine/
 | See what we submitted for Week 1 | [notebooks/L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb](notebooks/L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb) |
 | Understand how we solved Week 1, in plain words | [docs/assignment-1.md](docs/assignment-1.md) |
 | Learn the topics behind the assignments | [docs/learning-resources.md](docs/learning-resources.md) |
+| Track tasks, daily progress and learning in Excel | [tracker/LineShine_PM_Tracker.xlsx](tracker/LineShine_PM_Tracker.xlsx) |
 | Set up the task tracker / check-ins on Notion | [notion/README.md](notion/README.md) |
 | Read the official brief, slides and notes | [sessions/](sessions/) |
 
@@ -127,6 +129,22 @@ Then run the notebook again. **If any result changes, update the numbers in `scr
 - **Tasks and daily progress** live on Notion. To set it up, import the two templates in [notion/](notion/).
 - **Code** lives here. Pull before you start (`git pull`) and push when you're done.
 - Notebooks are hard to merge when two people edit the same one. Try your ideas in a separate notebook, then move the final code into `scripts/build_notebook.py`.
+
+## The Excel tracker
+
+[tracker/LineShine_PM_Tracker.xlsx](tracker/LineShine_PM_Tracker.xlsx) is a ready-to-use project tracker. You can use it instead of Notion, or next to it.
+
+| Sheet | What it's for |
+|---|---|
+| **Dashboard** | The big picture, all calculated: % done, points secured, overdue and blocked tasks, the next deadline, progress per assignment, and an overview of each member |
+| **Tasks** | One row per task. Pick the assignee, status and priority from drop-downs; days left and overdue fill in by themselves |
+| **Daily Check-ins** | Each person writes one short row a day: what I did, what's next, what's blocking me |
+| **Learning** | Every topic from [docs/learning-resources.md](docs/learning-resources.md), with links. Each member marks Not started / In progress / Done in their own column |
+| **Team** | Member list and contacts. It feeds the drop-downs |
+| **Lists** | Drop-down values. Add "Week 2" and so on here |
+
+Type only in **blue** cells; grey cells are formulas. To edit the tracker together, upload it to OneDrive or Google Drive and share it.
+To regenerate a blank copy: `uv run --with openpyxl python scripts/build_tracker.py`.
 
 ## About the data
 
