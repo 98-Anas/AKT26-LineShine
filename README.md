@@ -41,7 +41,7 @@
 | 1 | **Air-Quality Data Challenge**: clean messy sensor data and build a virtual PM2.5 sensor | Sat, Oct 10 2026, 2:59 PM | Ready to submit |
 | 2 | **AI Methods Shoot-out** (uses our cleaned Week-1 data) | announced later | Upcoming |
 
-**Week-1 result:** our cleaning cut the model's error by **6.7%** on the final test year, and all 12 stations improved. [Read how →](docs/assignment-1.md)
+**Week-1 result:** our cleaning cut the model's error by **5.8%** on the final test year, and all 12 stations improved. [Read how →](docs/assignment-1.md)
 
 ## Get started in 3 steps
 
@@ -52,7 +52,7 @@ cd AKT26-LineShine && uv sync                           # 2. install Python + al
 uv run jupyter lab                                      # 3. open the notebooks
 ```
 
-`uv sync` gives everyone exactly the same package versions. In VS Code, pick `.venv\Scripts\python.exe` as the notebook kernel.
+`uv sync` gives everyone exactly the same package versions. In VS Code, pick the `.venv` interpreter as the notebook kernel (`.venv/bin/python` on Linux/macOS, `.venv\Scripts\python.exe` on Windows).
 
 ## What's in this repo
 
