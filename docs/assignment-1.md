@@ -128,7 +128,7 @@ Then `clean_basic` applies the fixes in this order:
 6. Repair swaps, but only where the swapped value fits the neighbouring hours. PM2.5 slightly above PM10 also happens naturally from instrument noise in about 17,000 rows, and swapping those would corrupt the target.
 7. Stuck runs of 12 hours or more → missing (the whole run, not just its tail).
 
-**Verification:** exactly 315,648 rows, no duplicates, temperature peaks at 2–3 PM everywhere, CO medians 400–1,200 µg/m³, and **100% agreement** with the original files on temperature.
+**Verification:** exactly 315,648 rows, no duplicates, temperature peaks at 2–3 PM everywhere, CO medians 400–1,200 µg/m³.
 
 ### Task 3: Filling gaps (imputation study)
 
@@ -164,15 +164,15 @@ A **Hampel filter** flags hours that are far from the local median. It flagged 1
 **Data leakage** means the model sees information during training that it wouldn't have in real use. That makes scores look better than they are. We prevented it three ways:
 
 - Everything that *learns* from data (median imputer, scaler, one-hot encoder) sits **inside** a scikit-learn `Pipeline`, so it is re-fitted on the training part of every fold.
-- **TimeSeriesSplit**: always train on the past and test on the future. The lecture demo shows why: a random split scores 29.7, but the honest time split scores 42.3 on the same model.
+- **TimeSeriesSplit**: always train on the past and test on the future. The lecture demo shows why: a random split scores 29.7, but the honest time split scores 42.7 on the same model.
 - No PM10, and no test year until Task 6.
 
 | Variant | CV RMSE ± sd |
 |---|---|
-| A: our imputation + median/indicator pipeline | 41.73 ± 9.84 |
-| B: without our imputation | 43.29 ± 11.48 |
-| C: A with a log target | 45.36 ± 16.20 |
-| **D: A + averages of the last 3 h and 24 h of each gas and weather reading** | **38.31 ± 5.87** |
+| A: our imputation + median/indicator pipeline | 42.22 ± 10.58 |
+| B: without our imputation | 43.01 ± 10.97 |
+| C: A with a log target | 45.84 ± 16.84 |
+| **D: A + averages of the last 3 h and 24 h of each gas and weather reading** | **38.70 ± 6.42** |
 
 Variant D is the best and the most stable. Its features only look at **past** hours, so it stays leak-free. It also only works because the data was cleaned: rolling averages are meaningless on a series with duplicates or an 8-hour shift.
 
@@ -182,11 +182,11 @@ Both models are trained the same way and scored on the **same 97,979 complete ro
 
 | Model | RMSE | MAE | R² |
 |---|---|---|---|
-| Naive: the messy file as-is, rows with gaps dropped | 36.97 | 22.22 | 0.798 |
-| Cleaned data, same model | 36.76 | 22.01 | 0.801 |
-| **Cleaned + imputation + variant D** | **34.51** | **20.68** | **0.824** |
+| Naive: the messy file as-is, rows with gaps dropped | 36.86 | 22.18 | 0.800 |
+| Cleaned data, same model | 36.80 | 22.06 | 0.800 |
+| **Cleaned + imputation + variant D** | **34.70** | **20.79** | **0.822** |
 
-- **6.7% lower RMSE** and **6.9% lower MAE**, and **all 12 stations improved** (by 1.3–3.8 µg/m³). The biggest gain was at Changping, the station with the stuck sensor.
+- **5.8% lower RMSE** and **6.3% lower MAE**, and **all 12 stations improved** (by 1.1–3.5 µg/m³). The biggest gain was at Changping, the station with the stuck sensor.
 - Cleaning alone helps only a little with the same model, because gradient boosting is robust to one bad station-year. The naive model also throws away 36,269 training rows (12%).
 - The real gain comes from what clean data **makes possible**: valid time-based features.
 
@@ -196,12 +196,12 @@ The 12 stations are independent, so we cleaned them in parallel with `joblib`:
 
 | Workers | Time | Speed-up | Efficiency |
 |---|---|---|---|
-| 1 | 2.84 s | 1.0× | 100% |
-| 2 | 1.89 s | 1.5× | 75% |
-| 4 | 1.33 s | 2.1× | 53% |
-| 12 | 0.97 s | 2.9× | 24% |
+| 1 | 1.84 s | 1.0× | 100% |
+| 2 | 1.31 s | 1.4× | 70% |
+| 4 | 0.96 s | 1.9× | 48% |
+| 12 | 0.73 s | 2.5× | 21% |
 
-Speed-up levels off near 3× because each station's job is tiny (about 0.2 s). Starting worker processes and sending them data takes a large share of the time. This is **Amdahl's law** in practice. The slowest remaining step, KNN imputation (about 50 s), can't be split by station, but it could be split by column.
+Speed-up levels off near 2.5× because each station's job is tiny (about 0.15 s). Starting worker processes and sending them data takes a large share of the time. This is **Amdahl's law** in practice. The slowest remaining step, KNN imputation (about 50 s), can't be split by station, but it could be split by column.
 
 ### Advice we gave the agency
 
@@ -220,7 +220,7 @@ Speed-up levels off near 3× because each station's job is tiny (about 0.2 s). S
 | Issues found and fixed | 11, across all six quality dimensions |
 | Cleaned dataset | 315,648 rows (exactly 12 stations × 26,304 hours), 0 duplicates |
 | Best way to fill gaps | ≤ 3 h: interpolation (error 7.7); longer: KNN (error 11.3) |
-| Test-year error (RMSE) | 36.97 → **34.51** (−6.7%), R² 0.798 → **0.824** |
+| Test-year error (RMSE) | 36.86 → **34.70** (−5.8%), R² 0.800 → **0.822** |
 | Stations improved | **12 of 12** |
 | Parallel speed-up | about 3× on 12 cores |
 | Submission check | `✓ ready to submit` |

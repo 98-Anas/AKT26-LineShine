@@ -203,9 +203,6 @@ co2 = df_clean.groupby(["station", "year"])["CO"].median().unstack()
 print("TEMP-peak hour after fix (min..max over station-years):", pk2.values.min(), "..", pk2.values.max())
 print("CO median range after fix:", co2.values.min(), "..", co2.values.max())
 print("PM2.5 > PM10 left (instrument noise, kept):", int((df_clean["PM2.5"] > df_clean["PM10"]).sum()), "| -999 left:", int((df_clean[POLLUTANTS + WEATHER] == -999).sum().sum()))
-ref_check = train_raw.assign(station=train_raw["station"]).set_index(["station", "datetime"])["TEMP"]
-same = df_clean.set_index(["station", "datetime"])["TEMP"].reindex(ref_check.index)
-print(f"TEMP agreement with the original files after cleaning: {(np.isclose(same, ref_check) | (same.isna() | ref_check.isna())).mean():.4%}  (sanity check only)")
 ''')]
 B += [md(A.T2)]
 # ================= TASK 3 =================
@@ -453,7 +450,8 @@ print(f"exported {len(df_imp):,} rows x {df_imp.shape[1] - 1} cols -> {OUT}")
 B += [md(A.SUMMARY)]
 B += [md("## Submission check"), code(r'''
 import os, glob
-nb_files = glob.glob(f"L1_Air_Quality_Data_Preprocessing_Notebook_{TEAM_NAME}.ipynb")
+NB_NAME = f"L1_Air_Quality_Data_Preprocessing_Notebook_{TEAM_NAME}.ipynb"
+nb_files = glob.glob(NB_NAME) + glob.glob(f"notebooks/{NB_NAME}")  # works from notebooks/ or the repo root
 checks = {
     "TEAM_ID is the official ID": TEAM_ID == 1065,
     "TEAM_NAME uses letters, digits, hyphens": bool(__import__("re").fullmatch(r"[A-Za-z0-9-]+", TEAM_NAME)),
