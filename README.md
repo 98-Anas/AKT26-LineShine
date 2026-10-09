@@ -28,7 +28,7 @@
 | I want to… | Go here |
 |---|---|
 | See our Week-1 notebook | [notebooks/](notebooks/) |
-| Understand how we solved Week 1, in plain words | [docs/assignment-1.md](docs/assignment-1.md) |
+| Understand Week 1: the task, the requirements, our solution and what it teaches | [docs/assignment-1.md](docs/assignment-1.md) |
 | Track tasks, progress and learning | [tracker/](tracker/), in Excel or Notion |
 | Learn the topics behind the assignments | [docs/learning-resources.md](docs/learning-resources.md) |
 | Read the official brief, slides and notes | [sessions/](sessions/) |
