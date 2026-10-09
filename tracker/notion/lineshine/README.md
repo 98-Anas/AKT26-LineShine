@@ -24,7 +24,7 @@ All times are **Cairo (EEST, UTC+3)**, 12-hour AM/PM.
 | Risks | Likelihood, Impact | Number · Status → Select · Owner → Person |
 
 3. **Add the helpful formulas** (optional, *+ Add property → Formula*):
-   - Tasks → **Health**: `if(prop("Status") == "Done", "✅ Done", if(empty(prop("Due")), "No date", if(prop("Due") < now(), "🔴 Overdue", if(dateBetween(prop("Due"), now(), "days") <= 3, "🟠 Due soon", "🟢 On track"))))`
+   - Tasks → **Health**: `if(prop("Status") == "Done", "Complete", if(empty(prop("Due")), "No date", if(prop("Due") < now(), "Overdue", if(dateBetween(prop("Due"), now(), "days") <= 3, "Due soon", "ON TRACK"))))`
    - Risks → **Score**: `prop("Likelihood") * prop("Impact")`
    - Milestones → **% done**: add a *Rollup* of Tasks → Status → *Percent per group → Done*.
 4. **Create the views:**

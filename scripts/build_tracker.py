@@ -53,7 +53,7 @@ PRIORITIES = ["Critical", "High", "Medium", "Low"]
 PROGRESS = [0, 0.25, 0.5, 0.75, 1]
 LEARN = ["Not started", "In progress", "Done"]
 RISK_STATUS = ["Open", "Monitoring", "Closed"]
-MOODS = ["😀 Great", "🙂 Good", "😐 OK", "🙁 Struggling"]
+MOODS = ["Great", "Good", "OK", "Struggling"]
 N_TASKS, N_MEMBERS, N_MS, N_CHECK, N_RISK, N_LEARN, N_DAYS, N_WEEKS = 300, 10, 30, 500, 100, 150, 84, 16
 TL_ROWS = 80
 
@@ -169,7 +169,7 @@ def build(cfg, out):
             c.font, c.border, c.alignment = INPUT, BOX, CENTER
             if j == 2:
                 c.number_format = "0%"
-    st.cell(18, 6, "⚠ Task status 'Done' and 'Blocked' are used by formulas: rename them only together with the formulas.").font = font(8, italic=True, color=RED)
+    st.cell(18, 6, "Note: task status 'Done' and 'Blocked' are used by formulas: rename them only together with the formulas.").font = font(8, italic=True, color=RED)
     names = {"Members": "Settings!$A$16:$A$25", "Statuses": "Settings!$F$7:$F$16", "Priorities": "Settings!$G$7:$G$16",
              "ProgressVals": "Settings!$H$7:$H$16", "LearnStatus": "Settings!$I$7:$I$16", "RiskStatus": "Settings!$J$7:$J$16",
              "Moods": "Settings!$K$7:$K$16", "ProjStart": "Settings!$B$8", "ProjEnd": "Settings!$B$9",
@@ -206,7 +206,7 @@ def build(cfg, out):
         r = F1 + i
         tk.cell(r, 1, f'=IF(B{r}="","","T-"&TEXT(ROW()-5,"000"))')
         tk.cell(r, 12, f'=IF(OR(B{r}="",H{r}="",E{r}="Done"),"",ROUNDDOWN(H{r}-NOW(),0))')
-        tk.cell(r, 13, f'=IF(B{r}="","",IF(E{r}="Done","✓ Done",IF(E{r}="Blocked","Blocked",IF(H{r}="","No due date",'
+        tk.cell(r, 13, f'=IF(B{r}="","",IF(E{r}="Done","Complete",IF(E{r}="Blocked","Blocked",IF(H{r}="","No due date",'
                        f'IF(H{r}<NOW(),"Overdue",IF(H{r}-NOW()<=3,"Due soon","On track"))))))')
         tk.cell(r, 16, f'=IF(OR(B{r}="",E{r}="Done",H{r}=""),"",H{r}+ROW()/10000000)')
     for i, t in enumerate(cfg["tasks"]):
@@ -226,7 +226,7 @@ def build(cfg, out):
     status_colors(tk, f"E{F1}:E{FL}")
     tk.conditional_formatting.add(f"K{F1}:K{FL}", DataBarRule(start_type="num", start_value=0, end_type="num", end_value=1, color=GREEN))
     for k, (bg, fg) in {"Overdue": ("FEE4E2", RED), "Due soon": ("FEF0C7", "B54708"), "Blocked": ("FEE4E2", RED),
-                        "On track": ("ECFDF3", "027A48"), "✓ Done": ("D1FADF", "027A48")}.items():
+                        "On track": ("ECFDF3", "027A48"), "Complete": ("D1FADF", "027A48")}.items():
         tk.conditional_formatting.add(f"M{F1}:M{FL}", CellIsRule(operator="equal", formula=[f'"{k}"'], fill=fill(bg), font=font(10, True, fg)))
     tk.conditional_formatting.add(f"F{F1}:F{FL}", CellIsRule(operator="equal", formula=['"Critical"'], font=font(10, True, RED)))
     tk.conditional_formatting.add(f"B{F1}:B{FL}", FormulaRule(formula=[f'$E{F1}="Done"'], font=Font(name=FONT, size=10, color="98A2B3", strike=True)))
@@ -245,12 +245,12 @@ def build(cfg, out):
         ms.cell(r, 5, f'=IF(B{r}="","",COUNTIF({TR("C")},B{r}))')
         ms.cell(r, 6, f'=IF(B{r}="","",COUNTIFS({TR("C")},B{r},{TR("E")},"Done"))')
         ms.cell(r, 7, f'=IF(OR(B{r}="",E{r}=0),"",F{r}/E{r})')
-        ms.cell(r, 8, f'=IF(B{r}="","",IF(AND(E{r}>0,F{r}=E{r}),"✓ Complete",IF(C{r}="","Planned",IF(C{r}<NOW(),"Late","On track"))))')
+        ms.cell(r, 8, f'=IF(B{r}="","",IF(AND(E{r}>0,F{r}=E{r}),"Complete",IF(C{r}="","Planned",IF(C{r}<NOW(),"Late","On track"))))')
     for i, m in enumerate(cfg["milestones"]):
         ms.cell(6 + i, 2, m[0]); ms.cell(6 + i, 3, m[1]); ms.cell(6 + i, 9, m[2])
     dropdown(ms, "Members", f"D6:D{5 + N_MS}")
     ms.conditional_formatting.add(f"G6:G{5 + N_MS}", DataBarRule(start_type="num", start_value=0, end_type="num", end_value=1, color=GREEN))
-    for k, (bg, fg) in {"Late": ("FEE4E2", RED), "✓ Complete": ("D1FADF", "027A48"), "On track": ("ECFDF3", "027A48")}.items():
+    for k, (bg, fg) in {"Late": ("FEE4E2", RED), "Complete": ("D1FADF", "027A48"), "On track": ("ECFDF3", "027A48")}.items():
         ms.conditional_formatting.add(f"H6:H{5 + N_MS}", CellIsRule(operator="equal", formula=[f'"{k}"'], fill=fill(bg), font=font(10, True, fg)))
     ms.freeze_panes = "C6"
 
@@ -449,9 +449,11 @@ def build(cfg, out):
     for a in ("B12", "B13"):
         db[a].font = font(11, True)
     db.conditional_formatting.add("B12:B13", DataBarRule(start_type="num", start_value=0, end_type="num", end_value=1, color=BLUE))
-    db["D12"] = '=IF(A9+G9>0,"🔴 At risk",IF(B13+0.15<B12,"🟠 Behind schedule","🟢 On track"))'
+    db["D12"] = '=IF(A9+G9>0,"AT RISK",IF(B13+0.15<B12,"BEHIND SCHEDULE","ON TRACK"))'
     db["D12"].font = font(16, True, NAVY)
     db.merge_cells("D12:H13")
+    for txt, col in (("AT RISK", RED), ("BEHIND SCHEDULE", "B54708"), ("ON TRACK", "027A48")):
+        db.conditional_formatting.add("D12", CellIsRule(operator="equal", formula=[f'"{txt}"'], font=font(16, True, col)))
     db["D12"].alignment = Alignment(horizontal="left", vertical="center")
     db["J12"] = "Rule: at risk if anything is overdue or blocked; behind if work done trails time elapsed by more than 15 points."
     db["J12"].font = font(8, italic=True, color="667085"); db["J12"].alignment = TOP
@@ -695,7 +697,7 @@ TEMPLATE = dict(
         dict(task="Example: build the first version", ms="Build", owner="Jordan (example)", status="Not started", prio="Critical",
              start=today + timedelta(days=7), due=datetime.combine(today + timedelta(days=30), datetime.min.time()) + timedelta(hours=17), hours=20, progress=0, dep="T-002", notes="Example row", example=True),
     ],
-    checkins=[(today, "Alex (example)", "Wrote the project brief and shared it", "Review feedback with the team", "—", 2, "🙂 Good", "T-001")],
+    checkins=[(today, "Alex (example)", "Wrote the project brief and shared it", "Review feedback with the team", "—", 2, "Good", "T-001")],
     learning=[("Example area", "Example topic", "Example resource (link)", "https://example.com", 2)],
     risks=[("Example: key person unavailable near the deadline", "Risk", 2, 4, "Alex (example)", "Pair up on every critical task", "Open")],
 )
@@ -723,7 +725,7 @@ LINESHINE = dict(
                 ("Week 3", None, ""), ("Week 4", None, ""), ("Week 5 – Final", None, "Hackathon ends Nov 7, 2026")],
     tasks=[dict(task=t, ms="Week 1 – Air-Quality Data Challenge", status=s, prio=p, hours=None, start=date(2026, 10, 3), due=DUE1,
                 done=date(2026, 10, 9) if s == "Done" else None, progress=1 if s == "Done" else 0, notes=(f"{pts} points" if pts else None)) for t, s, p, pts in w1],
-    checkins=[(date(2026, 10, 9), "Anas Elgalad", "Ran the full notebook; checked every answer cell against the outputs", "Review the final summary with the team", "—", 2.5, "🙂 Good", "T-010")],
+    checkins=[(date(2026, 10, 9), "Anas Elgalad", "Ran the full notebook; checked every answer cell against the outputs", "Review the final summary with the team", "—", 2.5, "Good", "T-010")],
     learning=learning_from_docs(),
     risks=[("Deadline confusion: organisers use Anywhere-on-Earth time", "Risk", 3, 5, "Abdallah Ismail", "Use Cairo time everywhere: Sat Oct 10, 2:59 PM", "Monitoring"),
            ("Notebook merge conflicts when several people edit it", "Risk", 4, 3, None, "Edit scripts/build_notebook.py, not the notebook; one integrator", "Open"),
@@ -756,7 +758,7 @@ All times are **{tz}**, 12-hour AM/PM.
 | Risks | Likelihood, Impact | Number · Status → Select · Owner → Person |
 
 3. **Add the helpful formulas** (optional, *+ Add property → Formula*):
-   - Tasks → **Health**: `if(prop("Status") == "Done", "✅ Done", if(empty(prop("Due")), "No date", if(prop("Due") < now(), "🔴 Overdue", if(dateBetween(prop("Due"), now(), "days") <= 3, "🟠 Due soon", "🟢 On track"))))`
+   - Tasks → **Health**: `if(prop("Status") == "Done", "Complete", if(empty(prop("Due")), "No date", if(prop("Due") < now(), "Overdue", if(dateBetween(prop("Due"), now(), "days") <= 3, "Due soon", "ON TRACK"))))`
    - Risks → **Score**: `prop("Likelihood") * prop("Impact")`
    - Milestones → **% done**: add a *Rollup* of Tasks → Status → *Percent per group → Done*.
 4. **Create the views:**
