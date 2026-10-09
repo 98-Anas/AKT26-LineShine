@@ -1,6 +1,6 @@
 # Learning resources (all free)
 
-Sections are ordered by priority for Sprint 1. ⏱ = rough time needed.
+Sections are ordered by what you need first for the Week-1 assignment. ⏱ = rough time needed.
 
 ## 1. Python data wrangling
 | Topic | Resource | ⏱ |

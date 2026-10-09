@@ -1,55 +1,134 @@
-# AKT26 Hackathon: Team LineShine
+# Team LineShine: AKT26 Hackathon
 
-**Al-Khawarizmi Tour, Online Hackathon HPC & AI** (Oct 3 – Nov 7, 2026) · https://alkhawarizmi-tour.org/
+This is our team's workspace for the **Al-Khawarizmi Tour Online Hackathon (HPC & AI)**. The hackathon runs Oct 3 – Nov 7, 2026 ([website](https://alkhawarizmi-tour.org/)).
+It holds our code, data, finished assignments, and the templates we use to organise our work on Notion.
 
-| | |
+- **Team ID:** 1065
+- **Team name:** LineShine
+- **Members:** Abdallah Ismail (team leader), Omar Seifelnasr, Abdulrahman Omran, Anas Elgalad, Mohamed Abd Elaal, Mohamed Salah
+
+> All times in this repo are **Cairo time, 12-hour AM/PM**.
+
+---
+
+## Where things are
+
+```
+AKT26-LineShine/
+├── notebooks/        ← our assignment notebooks (this is what we submit)
+│   └── original/     ← the untouched notebook the organisers gave us
+├── data/raw/         ← the real Beijing air-quality data (12 station files)
+├── sessions/         ← course material from the organisers (slides, notes, briefs)
+├── docs/             ← explanations: how we solved each assignment + what to learn
+├── notion/           ← templates to import into our Notion page
+├── scripts/          ← helper scripts that rebuild the notebook
+├── pyproject.toml    ← list of Python packages (managed by uv)
+└── uv.lock           ← exact package versions so everyone has the same setup
+```
+
+| I want to… | Go to |
 |---|---|
-| **Team ID** | `1065` |
-| **Team name** | `LineShine` |
-| **Track** | AI: Data Quality & Preprocessing (Lecture 1) |
-| **Current sprint** | [Sprint 1: Air-Quality Data Challenge](docs/SPRINT-1.md) |
-| **Sprint 1 deadline** | **Sat, Oct 10 2026, 2:59 PM Cairo time** (= Oct 9, 11:59 PM AoE) |
-| **Timezone** | All times in this repo are Cairo, Egypt (EEST, UTC+3), 12-hour AM/PM |
-| **Submit via** | https://forms.gle/nW2kwDsy62fJ5KHt5 (team leader only, Team ID `1065`) |
-| **Task tracker & team progress** | [Notion dashboard](https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5), the team's official tracker |
-| **Course files** | [Google Drive](https://drive.google.com/drive/folders/1HY9vywZwunEfJGD7Fqc2uyYcJVlhcVpW?usp=sharing) → Session 1 › Assignment1 |
+| See what we submitted for Week 1 | [notebooks/L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb](notebooks/L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb) |
+| Understand how we solved Week 1, in plain words | [docs/assignment-1.md](docs/assignment-1.md) |
+| Learn the topics behind the assignments | [docs/learning-resources.md](docs/learning-resources.md) |
+| Set up the task tracker / check-ins on Notion | [notion/README.md](notion/README.md) |
+| Read the official brief, slides and notes | [sessions/](sessions/) |
 
-## Team
-| Member | |
-|---|---|
-| Abdallah Ismail | Team leader |
-| Omar Seifelnasr | Member |
-| Abdulrahman Omran | Member |
-| Anas Elgalad | Member |
-| Mohamed Abd Elaal | Member |
-| Mohamed Salah | Member |
+**Useful links**
 
-## Repo map
-| Path | What |
-|---|---|
-| [notebooks/](notebooks/) | The deliverable notebook: `L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb` |
-| [docs/TASK-TRACKER.md](docs/TASK-TRACKER.md) | Sprint snapshot. **The live tracker is on Notion** |
-| [docs/TEAM-PROGRESS.md](docs/TEAM-PROGRESS.md) | Repo milestones. **Stand-ups and progress are on Notion** |
-| [docs/SPRINT-1.md](docs/SPRINT-1.md) | Sprint goal, scope and Definition of Done for Assignment 1 |
-| [docs/AGILE.md](docs/AGILE.md) | How we work: roles, ceremonies, board, git flow |
-| [docs/LEARNING-RESOURCES.md](docs/LEARNING-RESOURCES.md) | Topics to learn, with free resources |
-| [docs/TECHNICAL-NOTES.md](docs/TECHNICAL-NOTES.md) | Known problems in the notebook and how to fix them |
-| [scripts/setup_github.ps1](scripts/setup_github.ps1) | Creates the GitHub repo, labels, issues and Project board in one run |
-| `data/raw/` | The 12 real UCI station CSVs (committed) |
-| `notebooks/*.csv.gz` | Generated merged/clean datasets (git-ignored, recreated by the notebook). **Keep `beijing_clean_team1065.csv.gz` for Week 2** |
-| [notebooks/original/](notebooks/original/) | The untouched course notebook, used as input by `scripts/build_notebook.py` |
-| [report/](report/) | Final summary and pitch material |
+- Notion dashboard (our tasks and progress): <https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5>
+- Course files (Google Drive): <https://drive.google.com/drive/folders/1HY9vywZwunEfJGD7Fqc2uyYcJVlhcVpW?usp=sharing>
+- Submission form (team leader only): <https://forms.gle/nW2kwDsy62fJ5KHt5>
 
-## Quick start (uv)
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) once (`pip install uv`, or `powershell -c "irm https://astral.sh/uv/install.ps1 | iex"`), then:
+---
+
+## Assignments
+
+| Week | Assignment | Due (Cairo time) | Status |
+|---|---|---|---|
+| 1 | Air-Quality Data Challenge: clean messy data, build a virtual PM2.5 sensor | **Sat, Oct 10 2026, 2:59 PM** | Notebook finished, ready to submit |
+| 2 | AI Methods Shoot-out (uses our cleaned Week-1 data) | announced later | — |
+
+---
+
+## Getting started
+
+You only need to do this once.
+
+**1. Install uv.** It's a fast tool that installs Python and all the packages for you.
+
+```powershell
+pip install uv
+```
+
+**2. Download the repo and install everything.**
+
 ```bash
 git clone https://github.com/98-Anas/AKT26-LineShine.git
 cd AKT26-LineShine
-uv sync                          # creates .venv with the exact locked versions (uv.lock)
-uv run jupyter lab               # open notebooks/L1_..._LineShine.ipynb, then Kernel → Restart & Run All
+uv sync
 ```
-- Add a package: `uv add <pkg>` (updates `pyproject.toml` + `uv.lock`, commit both).
-- VS Code: select the interpreter `.venv\Scripts\python.exe` as the notebook kernel.
-- Rebuild Part B from the course notebook: `uv run python scripts/build_notebook.py`.
-- Execute headless: `cd notebooks && uv run jupyter nbconvert --to notebook --execute --inplace L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb`.
-- The real UCI station files are committed in `data/raw/`. The notebook reads them, so there's no download and no silent synthetic fallback.
+
+`uv sync` creates a private Python environment in the `.venv` folder, with exactly the same package versions as everyone else on the team.
+
+**3. Open the notebook.**
+
+```bash
+uv run jupyter lab
+```
+
+Then open the notebook in `notebooks/`.
+In VS Code, open the notebook and choose `.venv\Scripts\python.exe` as the kernel instead.
+
+**Need another package?** Run `uv add <package-name>`, then commit both `pyproject.toml` and `uv.lock` so the rest of the team gets it too.
+
+---
+
+## Running the Week-1 notebook
+
+- In Jupyter, use **Kernel → Restart & Run All**. A full run takes about 10 minutes.
+- At the end, the **Submission check** cell must print `✓ ready to submit`.
+- The run also creates `notebooks/beijing_clean_team1065.csv.gz`, our cleaned dataset. **Keep it: Week 2 needs it.** It isn't stored in git because the notebook can always recreate it.
+
+To run the notebook from the command line instead:
+
+```bash
+cd notebooks
+uv run jupyter nbconvert --to notebook --execute --inplace L1_Air_Quality_Data_Preprocessing_Notebook_LineShine.ipynb
+```
+
+### How the notebook is put together
+
+We don't edit the big notebook by hand. Two scripts generate it from the organisers' original:
+
+- `scripts/build_notebook.py` takes the original notebook from `notebooks/original/`. It keeps Part A (the lecture demos), sets our Team ID, and writes our solution for Part B.
+- `scripts/answers.py` holds the written answers and the final summary that appear in the notebook.
+
+After changing either file, rebuild and rerun:
+
+```bash
+uv run python scripts/build_notebook.py
+```
+
+Then run the notebook again. **If any result changes, update the numbers in `scripts/answers.py`.** The rules say every number we write must come from the notebook output.
+
+---
+
+## Submitting an assignment
+
+1. Run the notebook from top to bottom and check that it prints `✓ ready to submit`.
+2. The **team leader** uploads the `.ipynb` file through the [submission form](https://forms.gle/nW2kwDsy62fJ5KHt5) using Team ID **1065**.
+3. Mark the task as Done on Notion.
+
+---
+
+## Working together
+
+- **Tasks and daily progress** live on Notion. To set it up, import the two templates in [notion/](notion/).
+- **Code** lives here. Pull before you start (`git pull`) and push when you're done.
+- Notebooks are hard to merge when two people edit the same one. Try your ideas in a separate notebook, then move the final code into `scripts/build_notebook.py`.
+
+## About the data
+
+`data/raw/` contains the **Beijing Multi-Site Air-Quality** dataset (UCI #501): hourly pollution and weather readings from 12 stations, March 2013 – February 2017.
+The files are stored in the repo on purpose. When Python can't download them, the original notebook silently switches to fake data, and committing them prevents that.
