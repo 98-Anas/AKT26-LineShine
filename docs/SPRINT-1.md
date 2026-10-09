@@ -1,6 +1,6 @@
 # Sprint 1: The Air-Quality Data Challenge (Week 1)
 
-**Deadline:** Oct 9 2026 23:59 AoE · **Points:** 100 + 10 bonus
+**Deadline:** Sat, Oct 10 2026, 2:59 PM Cairo time (= Oct 9, 11:59 PM AoE) · **Points:** 100 + 10 bonus
 
 **Sprint goal:** submit one fully executed notebook that passes the Submission check. It must contain a cleaned, leak-free virtual PM2.5 sensor that measurably beats the naive model on the 2016–17 test year. Also export `beijing_clean_team1065.csv.gz` for Week 2.
 

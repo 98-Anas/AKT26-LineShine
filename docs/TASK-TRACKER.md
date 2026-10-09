@@ -6,7 +6,7 @@
 > Owners, statuses and priorities are set **there**. GitHub Issues are only for code-level work (bugs, PRs).
 > The table below is a snapshot of Sprint 1 for reference and may be out of date.
 
-## Sprint 1 snapshot: Air-Quality Data Challenge (due Oct 9 2026 AoE)
+## Sprint 1 snapshot: Air-Quality Data Challenge (due Sat, Oct 10 2026, 2:59 PM Cairo time)
 | ID | Task | Proposed owner | Pts | GitHub issue |
 |---|---|---|---|---|
 | S1-00 | Rename notebook, `TEAM_ID=1065`, `TEAM_NAME`, regenerate dataset | Abdallah | — | #1 |

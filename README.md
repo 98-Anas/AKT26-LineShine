@@ -8,7 +8,8 @@
 | **Team name** | `LineShine` |
 | **Track** | AI: Data Quality & Preprocessing (Lecture 1) |
 | **Current sprint** | [Sprint 1: Air-Quality Data Challenge](docs/SPRINT-1.md) |
-| **Sprint 1 deadline** | **Oct 9 2026, 23:59 AoE** |
+| **Sprint 1 deadline** | **Sat, Oct 10 2026, 2:59 PM Cairo time** (= Oct 9, 11:59 PM AoE) |
+| **Timezone** | All times in this repo are Cairo, Egypt (EEST, UTC+3), 12-hour AM/PM |
 | **Submit via** | https://forms.gle/nW2kwDsy62fJ5KHt5 (team leader only, Team ID `1065`) |
 | **Task tracker & team progress** | [Notion dashboard](https://functional-soapwort-2ac.notion.site/HPC-Competition-3e8ecac9147480f5b17bf11edbfe09c5), managed by the team leader |
 | **Course files** | [Google Drive](https://drive.google.com/drive/folders/1HY9vywZwunEfJGD7Fqc2uyYcJVlhcVpW?usp=sharing) → Session 1 › Assignment1 |
